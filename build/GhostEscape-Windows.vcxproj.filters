@@ -49,6 +49,9 @@
     <ClCompile Include="D:\Demo\ghost\src\affiliate\collider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Demo\ghost\src\affiliate\affiliate_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Demo\ghost\src\raw\stats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

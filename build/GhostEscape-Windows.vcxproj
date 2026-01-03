@@ -341,6 +341,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Demo\ghost\src\affiliate\sprite.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\affiliate\sprite_anim.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\affiliate\collider.cpp" />
+    <ClCompile Include="D:\Demo\ghost\src\affiliate\affiliate_bar.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\raw\stats.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\raw\weapon.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\world\effect.cpp" />

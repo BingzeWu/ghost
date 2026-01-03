@@ -20,10 +20,15 @@ void SceneMain::init()
     addChild(player_);
 
     // 创建并初始化生成器对象
-    spawner_ = new Spawner();
-    spawner_->init();
-    spawner_->setTarget(player_);
-    addChild(spawner_);
+    //spawner_ = new Spawner();
+    //spawner_->init();
+    //spawner_->setTarget(player_);
+    //addChild(spawner_);
+
+    // 测试用只生成一个敌人
+    auto pos = game_.randomVec2(game_.getCurrentScene()->getCameraPosition(), game_.getCurrentScene()->getCameraPosition() + game_.getScreenSize());
+    Enemy* enemy = Enemy::addEnemyChild(nullptr, pos, player_);
+    Effect::addEffectChild(game_.getCurrentScene(), "assets/effect/184_3.png", pos, 1.0f, enemy);
 
     // 创建并初始化鼠标UI对象
     ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);

@@ -1,6 +1,7 @@
 #include "actor.h"
 #include "scene.h"
 #include "../raw/stats.h"
+#include "../affiliate/affiliate_bar.h"
 
 void Actor::takeDamage(float damage)
 {
@@ -8,10 +9,22 @@ void Actor::takeDamage(float damage)
     stats_->takeDamage(damage);
 }
 
+void Actor::update(float dt)
+{   
+    ObjectWorld::update(dt);
+    updateHealthBar();
+}
+
 bool Actor::isAlive() const
 {
     if (!stats_) return true;
     return stats_->getIsAlive();
+}
+
+void Actor::updateHealthBar()
+{
+    if (!stats_ || !health_bar_) return;
+    health_bar_->setPercentage(stats_->getHealth() / stats_->getMaxHealth()); // 更新生命条百分比
 }
 
 void Actor::move(float dt)

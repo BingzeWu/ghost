@@ -14,6 +14,7 @@ D:\Demo\ghost\src\core\object_affiliate.cpp;D:\Demo\ghost\build\GhostEscape-Wind
 D:\Demo\ghost\src\affiliate\sprite.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\sprite.obj
 D:\Demo\ghost\src\affiliate\sprite_anim.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\sprite_anim.obj
 D:\Demo\ghost\src\affiliate\collider.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\collider.obj
+D:\Demo\ghost\src\affiliate\affiliate_bar.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\affiliate_bar.obj
 D:\Demo\ghost\src\raw\stats.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\stats.obj
 D:\Demo\ghost\src\raw\weapon.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\weapon.obj
 D:\Demo\ghost\src\world\effect.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\effect.obj

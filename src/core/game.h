@@ -66,7 +66,8 @@ public:
     int randomInt(int min, int max) { return std::uniform_int_distribution<int>(min, max)(gen_); } // 生成[min, max]范围内的随机整数
     glm::vec2 randomVec2(const glm::vec2& min, const glm::vec2& max) { return glm::vec2(randomFloat(min.x, max.x), randomFloat(min.y, max.y)); } // 生成[min, max]范围内的随机二维向量
     glm::ivec2 randomIVec2(const glm::ivec2& min, const glm::ivec2& max) { return glm::ivec2(randomInt(min.x, max.x), randomInt(min.y, max.y)); } // 生成[min, max]范围内的随机二维整数向量
-    
+    void renderHBar(const glm::vec2& position, const glm::vec2& size, float percent, SDL_FColor color); // 渲染水平进度条
+
     // getters and setters
     glm::vec2 getScreenSize() const { return screen_size_; } // 获取屏幕尺寸
     Scene* getCurrentScene() const { return current_scene_; } // 获取当前场景
