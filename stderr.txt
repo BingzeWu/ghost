@@ -1,0 +1,2 @@
+Game initialized with screen size (1280, 720)
+SceneMain initialized.

@@ -1,0 +1,80 @@
+#pragma once
+#include <string>
+#include <random>
+#include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_mixer/SDL_mixer.h>
+#include <SDL3_ttf/SDL_ttf.h>
+#include <glm/glm.hpp>
+
+#include "asset_store.h"
+
+struct Texture;
+class Scene; // 前向声明
+
+class Game 
+{
+private:
+    glm::vec2 screen_size_ = glm::vec2(0);
+    bool is_running_ = true;
+
+    SDL_Window* window_ = nullptr;
+    SDL_Renderer* renderer_ = nullptr;
+
+    // FPS tracking
+    Uint64 FPS_ = 60;
+    Uint64 frame_delay_ = 0;
+    float dt_ = 0.0f;
+
+    //资源管理器
+    AssetStore* asset_store_ = nullptr;
+
+    // mouse UI state
+    glm::vec2 mouse_position_ = glm::vec2(0);
+    SDL_MouseButtonFlags mouse_buttons_ = 0;
+
+    // Private constructor for singleton pattern
+    Game(){}
+    Game(const Game&) = delete;
+    Game& operator=(const Game&) = delete;
+    
+    std::mt19937 gen_ = std::mt19937(std::random_device{}()); // 随机数生成器
+
+public:
+    // Accessor for singleton instance
+    static Game& GetInstance() 
+    {
+        static Game instance;
+        return instance;
+    }
+    
+    Scene* current_scene_ = nullptr;
+    
+    void init(std::string title, int width, int height);
+    void run();
+    void handleEvents();
+    void update(float dt);
+    void render();
+    void renderTexture(const Texture& texture, const glm::vec2& position, const glm::vec2& size);
+    void clean();
+
+    // 工具函数
+    void drawGrid(const glm::vec2& top_left, const glm::vec2& bottom_right, float grid_width, SDL_FColor fcolor); // 绘制网格
+    void drawBoundary(const glm::vec2& top_left, const glm::vec2& bottom_right, float boundary_width, SDL_FColor fcolor); // 绘制边界
+    void renderFillCircle(const glm::vec2& position, const glm::vec2& size, float alpha); // 渲染填充圆
+    float randomFloat(float min, float max) { return std::uniform_real_distribution<float>(min, max)(gen_); } // 生成[min, max]范围内的随机浮点数
+    int randomInt(int min, int max) { return std::uniform_int_distribution<int>(min, max)(gen_); } // 生成[min, max]范围内的随机整数
+    glm::vec2 randomVec2(const glm::vec2& min, const glm::vec2& max) { return glm::vec2(randomFloat(min.x, max.x), randomFloat(min.y, max.y)); } // 生成[min, max]范围内的随机二维向量
+    glm::ivec2 randomIVec2(const glm::ivec2& min, const glm::ivec2& max) { return glm::ivec2(randomInt(min.x, max.x), randomInt(min.y, max.y)); } // 生成[min, max]范围内的随机二维整数向量
+    
+    // getters and setters
+    glm::vec2 getScreenSize() const { return screen_size_; } // 获取屏幕尺寸
+    Scene* getCurrentScene() const { return current_scene_; } // 获取当前场景
+    AssetStore* getAssetStore() const { return asset_store_; } // 获取资源管理器
+    SDL_Renderer* getRenderer() const { return renderer_; } // 获取渲染器
+    glm::vec2 getMousePosition() const { return mouse_position_; }
+    SDL_MouseButtonFlags getMouseButtons() const { return mouse_buttons_; }
+
+    
+};
+

@@ -1,0 +1,81 @@
+#include "scene_main.h"
+#include "player.h"
+#include "enemy.h"
+#include "spawner.h"
+#include "world/spell.h"
+
+void SceneMain::init()
+{
+    // 初始化场景中的对象和资源
+    
+    Scene::init();
+    SDL_HideCursor(); // 隐藏系统默认光标
+    world_size_ = glm::vec2(1600.0f, 1200.0f);
+    camera_position_ = world_size_ / 2.0f - game_.getScreenSize() / 2.0f;
+    
+    // 创建并初始化玩家对象
+    player_ = new Player();
+    player_->init();
+    player_->setPosition(world_size_ / 2.0f); // 将玩家放置在世界中心
+    addChild(player_);
+
+    // 创建并初始化生成器对象
+    spawner_ = new Spawner();
+    spawner_->init();
+    spawner_->setTarget(player_);
+    addChild(spawner_);
+
+    // 创建并初始化鼠标UI对象
+    ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);
+
+    //
+    SDL_Log("SceneMain initialized.");
+
+}
+
+void SceneMain::handleEvents(SDL_Event& event)
+{
+    Scene::handleEvents(event);
+}
+
+void SceneMain::renderBackground()
+{
+
+    // 计算缩放后的坐标...
+    auto start = -camera_position_ * camera_zoom_;
+    auto end = (world_size_ - camera_position_) * camera_zoom_;
+    
+    // 渲染背景网格和边界
+    game_.drawGrid(start, end, 80.0f, {0.5, 0.5, 0.5, 1.0});
+    game_.drawBoundary(start, end, 5.0f, {1.0, 1.0, 1.0, 1.0});
+}
+
+
+void SceneMain::updateCamera(float dt)
+{   
+    // 更新摄像机
+    camera_position_ -= glm::vec2(100.0f, 100.0f) * dt; // 简单地让摄像机向右下移动
+
+
+    // 边界检查
+    camera_position_.x = std::clamp(camera_position_.x, 0.0f, world_size_.x - game_.getScreenSize().x);
+    camera_position_.y = std::clamp(camera_position_.y, 0.0f, world_size_.y - game_.getScreenSize().y);
+}
+
+void SceneMain::update(float dt)
+{   
+    Scene::update(dt);  // 调用父类的update，它会自动处理所有子对象
+}
+
+
+
+void SceneMain::render()
+{   
+    renderBackground();
+    Scene::render();  // 调用父类的render，它会自动处理所有子对象
+}
+
+void SceneMain::clean()
+{
+    Scene::clean();
+}
