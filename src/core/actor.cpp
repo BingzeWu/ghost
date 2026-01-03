@@ -30,5 +30,5 @@ void Actor::updateHealthBar()
 void Actor::move(float dt)
 {
     setPosition(position_ + velocity_ * dt);
-    position_ = glm::clamp(position_, glm::vec2(0), game_.getCurrentScene()->getWorldSize());
+    position_ = glm::clamp(position_, glm::vec2(30), game_.getCurrentScene()->getWorldSize() - glm::vec2(30)); // 边界检查，假设角色大小为40x40
 }

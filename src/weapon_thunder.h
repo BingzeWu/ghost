@@ -2,12 +2,17 @@
 #define WEAPON_THUNDER_H
 
 #include "raw/weapon.h"
+#include "screen/hud_skill.h"
 
 class WeaponThunder : public Weapon
 {
+protected:
+    HUDSkill* hud_skill_ = nullptr; // 技能栏图标
 public:
+    virtual void init() override;
+    virtual void update(float dt) override;
     static WeaponThunder* addWeaponThunderChild(Actor* parent, float cool_down, float mana_cost);
-
+    
     virtual void handleEvents(SDL_Event& event) override;
 };
 

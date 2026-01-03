@@ -67,6 +67,12 @@
     <ClCompile Include="D:\Demo\ghost\src\screen\ui_mouse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Demo\ghost\src\screen\hud_stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Demo\ghost\src\screen\hud_skill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Demo\ghost\CMakeLists.txt" />

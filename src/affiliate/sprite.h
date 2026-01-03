@@ -16,11 +16,13 @@ class Sprite : public ObjectAffiliate
 protected:
     Texture texture_;
     bool is_finish_ = false; // 精灵动画是否播放完毕
+    glm::vec2 percentage_ = glm::vec2(1.0f); // 精灵显示百分比，用于血条等效果
 
 public:
     static Sprite* addSpriteChild(ObjectScreen* parent, const std::string& file_path, float scale = 1.0f, Anchor anchor = Anchor::CENTER);// 工厂方法，简化精灵的创建过程
     
     virtual void render() override;
+    
     
 
     // getters and setters
@@ -32,5 +34,7 @@ public:
     void setAngle(float angle) { texture_.angle = angle; }
     bool getFlip() const { return texture_.is_flip; }
     float getAngle() const { return texture_.angle; }
+    glm::vec2 getPercentage() const { return percentage_; }
+    void setPercentage(const glm::vec2& percentage) { percentage_ = percentage; }
 
 };

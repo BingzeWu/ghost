@@ -3,6 +3,7 @@
 #include "enemy.h"
 #include "spawner.h"
 #include "world/spell.h"
+#include "screen/hud_stats.h"
 
 void SceneMain::init()
 {
@@ -32,6 +33,7 @@ void SceneMain::init()
 
     // 创建并初始化鼠标UI对象
     ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);
+    hud_stats_ = HUDStats::addHUDStatsChild(this, player_, glm::vec2(30.f));
 
     //
     SDL_Log("SceneMain initialized.");

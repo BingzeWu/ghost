@@ -101,16 +101,23 @@ void Game::render()
     SDL_RenderPresent(renderer_);
 }
 
-void Game::renderTexture(const Texture &texture, const glm::vec2 &position, const glm::vec2 &size)
+void Game::renderTexture(const Texture &texture, const glm::vec2 &position, const glm::vec2 &size, const glm::vec2 &mask)
 {
+    SDL_FRect src_rect = {
+        texture.src_rect.x,
+        texture.src_rect.y + texture.src_rect.h * (1 - mask.y), // 从底部开始截取,符合技能栏冷却效果
+        texture.src_rect.w * mask.x,
+        texture.src_rect.h * mask.y
+    };
     SDL_FRect dst_rect = {
         position.x,
-        position.y,
-        size.x,
-        size.y
+        position.y + size.y * (1 - mask.y), // 从底部开始渲染
+        size.x * mask.x,
+        size.y * mask.y
     };
-    SDL_RenderTextureRotated(renderer_, texture.texture, &texture.src_rect, &dst_rect, texture.angle, nullptr, texture.is_flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
+    SDL_RenderTextureRotated(renderer_, texture.texture, &src_rect, &dst_rect, texture.angle, nullptr, texture.is_flip ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE);
 }
+
 
 void Game::clean()
 {

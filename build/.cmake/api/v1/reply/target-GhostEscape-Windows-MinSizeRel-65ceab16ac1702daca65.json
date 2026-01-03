@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "D:/Demo/ghost/GhostEscape-Windows.exe"
+			"path" : "MinSizeRel/GhostEscape-Windows.exe"
 		},
 		{
-			"path" : "D:/Demo/ghost/GhostEscape-Windows.pdb"
+			"path" : "MinSizeRel/GhostEscape-Windows.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +35,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 59,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG -std:c++17"
 				},
 				{
 					"backtrace" : 3,
@@ -113,7 +113,9 @@
 				18,
 				19,
 				20,
-				21
+				21,
+				22,
+				23
 			]
 		}
 	],
@@ -129,11 +131,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -202,7 +204,9 @@
 				18,
 				19,
 				20,
-				21
+				21,
+				22,
+				23
 			]
 		}
 	],
@@ -338,6 +342,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/screen/ui_mouse.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/screen/hud_stats.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/screen/hud_skill.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

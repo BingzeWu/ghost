@@ -11,7 +11,7 @@ protected:
     Actor* parent_ = nullptr;
     float cool_down_ = 1.0f;
     float mana_cost_ = 0.0f;
-    float cool_down_timer_ = 0.0f;
+    float cool_down_timer_ = 1.0f; // 已经过去的冷却时间,初始为满状态
 public:
     virtual void update(float dt) override;
     

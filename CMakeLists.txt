@@ -53,6 +53,8 @@ add_executable(${TARGET}
                 src/world/effect.cpp 
                 src/world/spell.cpp 
                 src/screen/ui_mouse.cpp 
+                src/screen/hud_stats.cpp 
+                src/screen/hud_skill.cpp
 )
 
 # 链接库

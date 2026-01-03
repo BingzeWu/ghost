@@ -20,3 +20,5 @@ D:\Demo\ghost\src\raw\weapon.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Rel
 D:\Demo\ghost\src\world\effect.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\effect.obj
 D:\Demo\ghost\src\world\spell.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\spell.obj
 D:\Demo\ghost\src\screen\ui_mouse.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\ui_mouse.obj
+D:\Demo\ghost\src\screen\hud_stats.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_stats.obj
+D:\Demo\ghost\src\screen\hud_skill.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_skill.obj

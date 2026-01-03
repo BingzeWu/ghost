@@ -55,7 +55,7 @@ public:
     void handleEvents();
     void update(float dt);
     void render();
-    void renderTexture(const Texture& texture, const glm::vec2& position, const glm::vec2& size);
+    void renderTexture(const Texture& texture, const glm::vec2& position, const glm::vec2& size, const glm::vec2 &mask = glm::vec2(1.0f)); // 渲染纹理
     void clean();
 
     // 工具函数
