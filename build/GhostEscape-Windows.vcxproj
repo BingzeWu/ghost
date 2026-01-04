@@ -327,6 +327,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="D:\Demo\ghost\src\main.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\scene_main.cpp" />
+    <ClCompile Include="D:\Demo\ghost\src\scene_title.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\player.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\enemy.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\spawner.cpp" />
@@ -351,6 +352,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_stats.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_skill.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_text.cpp" />
+    <ClCompile Include="D:\Demo\ghost\src\screen\hud_button.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Demo\ghost\build\ZERO_CHECK.vcxproj">

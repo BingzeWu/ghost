@@ -1,5 +1,6 @@
 D:\Demo\ghost\src\main.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\main.obj
 D:\Demo\ghost\src\scene_main.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\scene_main.obj
+D:\Demo\ghost\src\scene_title.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\scene_title.obj
 D:\Demo\ghost\src\player.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\player.obj
 D:\Demo\ghost\src\enemy.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\enemy.obj
 D:\Demo\ghost\src\spawner.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\spawner.obj
@@ -24,3 +25,4 @@ D:\Demo\ghost\src\screen\ui_mouse.cpp;D:\Demo\ghost\build\GhostEscape-Windows.di
 D:\Demo\ghost\src\screen\hud_stats.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_stats.obj
 D:\Demo\ghost\src\screen\hud_skill.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_skill.obj
 D:\Demo\ghost\src\screen\hud_text.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_text.obj
+D:\Demo\ghost\src\screen\hud_button.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_button.obj

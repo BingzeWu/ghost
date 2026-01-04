@@ -1,5 +1,6 @@
 #include "game.h"
 #include "../scene_main.h"
+#include "../scene_title.h"
 #include "../affiliate/sprite.h"
 
 void Game::init(std::string title, int width, int height)
@@ -49,7 +50,8 @@ void Game::init(std::string title, int width, int height)
     frame_delay_ = 1000000000 / FPS_;
     
     // Initialize the main scene
-    current_scene_ = new SceneMain();
+    //current_scene_ = new SceneMain(); // 默认进入主场景
+    current_scene_ = new SceneTitle();
     SDL_Log("Game initialized with screen size (%d, %d)", width, height);
     current_scene_->init();
 }
@@ -204,6 +206,15 @@ void Game::renderFillCircle(const glm::vec2 &position, const glm::vec2 &size, fl
     };
     SDL_SetTextureAlphaModFloat(texture, alpha);
     SDL_RenderTexture(renderer_, texture, NULL, &dst_rect);
+}
+
+bool Game::isMouseInRect(const glm::vec2 &top_left, const glm::vec2 &botton_right)
+{
+    if (mouse_position_.x >= top_left.x && mouse_position_.x <= botton_right.x && 
+        mouse_position_.y >= top_left.y && mouse_position_.y <= botton_right.y){
+        return true;
+    }
+    return false;
 }
 
 void Game::renderHBar(const glm::vec2 &position, const glm::vec2 &size, float percent, SDL_FColor color)

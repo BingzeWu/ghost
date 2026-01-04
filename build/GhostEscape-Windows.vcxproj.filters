@@ -7,6 +7,9 @@
     <ClCompile Include="D:\Demo\ghost\src\scene_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Demo\ghost\src\scene_title.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Demo\ghost\src\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -77,6 +80,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Demo\ghost\src\screen\hud_button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
