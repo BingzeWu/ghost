@@ -33,6 +33,11 @@ private:
     glm::vec2 mouse_position_ = glm::vec2(0);
     SDL_MouseButtonFlags mouse_buttons_ = 0;
 
+    // 文本引擎和相关标签
+    TTF_TextEngine* ttf_engine_ = nullptr;
+    int score_ = 0;
+    int high_score_ = 0;
+
     // Private constructor for singleton pattern
     Game(){}
     Game(const Game&) = delete;
@@ -57,6 +62,16 @@ public:
     void render();
     void renderTexture(const Texture& texture, const glm::vec2& position, const glm::vec2& size, const glm::vec2 &mask = glm::vec2(1.0f)); // 渲染纹理
     void clean();
+
+    //文字相关函数
+    TTF_Text* createTTF_Text(const std::string& text, const std::string& font_path, int font_size = 16);
+    
+    // 得分函数
+    void setScore(int score);
+    int getScore() const { return score_; }
+    void setHighScore(int high_score) { high_score_ = high_score; }
+    int getHighScore() const { return high_score_; }
+    void addScore(int score);
 
     // 工具函数
     void drawGrid(const glm::vec2& top_left, const glm::vec2& bottom_right, float grid_width, SDL_FColor fcolor); // 绘制网格

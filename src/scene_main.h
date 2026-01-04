@@ -7,6 +7,7 @@
 class Spawner;
 class Player;
 class HUDStats;
+class HUDText;
 
 class SceneMain : public Scene
 {
@@ -14,6 +15,7 @@ class SceneMain : public Scene
     Spawner* spawner_ = nullptr; // 敌人生成器
     UIMouse* ui_mouse_ = nullptr; // 鼠标UI对象
     HUDStats* hud_stats_ = nullptr; // 统计信息HUD
+    HUDText* hud_text_score_ = nullptr; // 分数显示HUD
 
 public:
     SceneMain() = default;
@@ -29,5 +31,6 @@ private:
     void renderBackground();
     void updateCamera(float dt);
     float camera_zoom_ = 1.0f; // 相机缩放因子
+    void updateScore();
 
 };

@@ -20,6 +20,8 @@ class Enemy : public Actor
     
     Player* target_ = nullptr;
 
+    int score_ = 10;
+
 
 public:
     virtual void init();

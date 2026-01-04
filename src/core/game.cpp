@@ -36,6 +36,9 @@ void Game::init(std::string title, int width, int height)
         return;
     }
 
+    // 初始化文本引擎
+    ttf_engine_ = TTF_CreateRendererTextEngine(renderer_);
+
     // Additional initialization code can go here
     SDL_SetRenderLogicalPresentation(renderer_, width, height, SDL_LOGICAL_PRESENTATION_LETTERBOX);
 
@@ -133,6 +136,10 @@ void Game::clean()
         delete asset_store_;
         asset_store_ = nullptr;
     } 
+    // 释放文本引擎
+    if (ttf_engine_){
+        TTF_DestroyRendererTextEngine(ttf_engine_);
+    }
     // 释放渲染器和窗口
     if (renderer_)
     {
@@ -142,7 +149,26 @@ void Game::clean()
 
 }
 
-void Game::drawGrid(const glm::vec2& top_left, const glm::vec2& bottom_right, float grid_width, SDL_FColor fcolor)
+TTF_Text *Game::createTTF_Text(const std::string &text, const std::string &font_path, int font_size)
+{
+    auto font = asset_store_->getFont(font_path, font_size);
+    return TTF_CreateText(ttf_engine_, font, text.c_str(), 0);
+}
+
+void Game::setScore(int score)
+{
+    score_ = score; 
+    if (score_ > high_score_) {
+        high_score_ = score_;
+    }
+}
+
+void Game::addScore(int score)
+{
+    setScore(score_ + score);
+}
+
+void Game::drawGrid(const glm::vec2 &top_left, const glm::vec2 &bottom_right, float grid_width, SDL_FColor fcolor)
 {
     SDL_SetRenderDrawColorFloat(renderer_, fcolor.r, fcolor.g, fcolor.b, fcolor.a);
     for (float x = top_left.x; x <= bottom_right.x; x += grid_width) {

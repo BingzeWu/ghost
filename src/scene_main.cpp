@@ -4,6 +4,7 @@
 #include "spawner.h"
 #include "world/spell.h"
 #include "screen/hud_stats.h"
+#include "screen/hud_text.h"
 
 void SceneMain::init()
 {
@@ -34,7 +35,7 @@ void SceneMain::init()
     // 创建并初始化鼠标UI对象
     ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);
     hud_stats_ = HUDStats::addHUDStatsChild(this, player_, glm::vec2(30.f));
-
+    hud_text_score_ = HUDText::addHUDTextChild(this, "Score: 0", glm::vec2(game_.getScreenSize().x - 120.f, 30.f), glm::vec2(200, 50));
     //
     SDL_Log("SceneMain initialized.");
 
@@ -69,9 +70,17 @@ void SceneMain::updateCamera(float dt)
     camera_position_.y = std::clamp(camera_position_.y, 0.0f, world_size_.y - game_.getScreenSize().y);
 }
 
+void SceneMain::updateScore()
+{
+    if (hud_text_score_) {
+        hud_text_score_->getTextLabel()->setText("Score: " + std::to_string(game_.getScore()));
+    }
+}
+
 void SceneMain::update(float dt)
 {   
     Scene::update(dt);  // 调用父类的update，它会自动处理所有子对象
+    updateScore();
 }
 
 

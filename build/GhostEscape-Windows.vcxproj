@@ -342,6 +342,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Demo\ghost\src\affiliate\sprite_anim.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\affiliate\collider.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\affiliate\affiliate_bar.cpp" />
+    <ClCompile Include="D:\Demo\ghost\src\affiliate\text_label.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\raw\stats.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\raw\weapon.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\world\effect.cpp" />
@@ -349,6 +350,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Demo\ghost\src\screen\ui_mouse.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_stats.cpp" />
     <ClCompile Include="D:\Demo\ghost\src\screen\hud_skill.cpp" />
+    <ClCompile Include="D:\Demo\ghost\src\screen\hud_text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Demo\ghost\build\ZERO_CHECK.vcxproj">

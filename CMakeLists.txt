@@ -48,6 +48,7 @@ add_executable(${TARGET}
                 src/affiliate/sprite_anim.cpp 
                 src/affiliate/collider.cpp 
                 src/affiliate/affiliate_bar.cpp 
+                src/affiliate/text_label.cpp 
                 src/raw/stats.cpp  
                 src/raw/weapon.cpp 
                 src/world/effect.cpp 
@@ -55,6 +56,7 @@ add_executable(${TARGET}
                 src/screen/ui_mouse.cpp 
                 src/screen/hud_stats.cpp 
                 src/screen/hud_skill.cpp
+                src/screen/hud_text.cpp 
 )
 
 # 链接库

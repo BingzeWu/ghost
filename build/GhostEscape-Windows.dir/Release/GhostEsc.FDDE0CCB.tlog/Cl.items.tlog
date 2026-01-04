@@ -15,6 +15,7 @@ D:\Demo\ghost\src\affiliate\sprite.cpp;D:\Demo\ghost\build\GhostEscape-Windows.d
 D:\Demo\ghost\src\affiliate\sprite_anim.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\sprite_anim.obj
 D:\Demo\ghost\src\affiliate\collider.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\collider.obj
 D:\Demo\ghost\src\affiliate\affiliate_bar.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\affiliate_bar.obj
+D:\Demo\ghost\src\affiliate\text_label.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\text_label.obj
 D:\Demo\ghost\src\raw\stats.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\stats.obj
 D:\Demo\ghost\src\raw\weapon.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\weapon.obj
 D:\Demo\ghost\src\world\effect.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\effect.obj
@@ -22,3 +23,4 @@ D:\Demo\ghost\src\world\spell.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Re
 D:\Demo\ghost\src\screen\ui_mouse.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\ui_mouse.obj
 D:\Demo\ghost\src\screen\hud_stats.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_stats.obj
 D:\Demo\ghost\src\screen\hud_skill.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_skill.obj
+D:\Demo\ghost\src\screen\hud_text.cpp;D:\Demo\ghost\build\GhostEscape-Windows.dir\Release\hud_text.obj
