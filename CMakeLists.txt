@@ -33,6 +33,7 @@ find_package(glm CONFIG REQUIRED)
 add_executable(${TARGET} 
                 src/main.cpp 
                 src/scene_main.cpp 
+                src/scene_title.cpp 
                 src/player.cpp 
                 src/enemy.cpp 
                 src/spawner.cpp 
