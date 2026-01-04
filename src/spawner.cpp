@@ -9,6 +9,7 @@ void Spawner::update(float dt)
     timer_ += dt;
     if (timer_ >= interval_) {
         timer_ = 0;
+        game_.playSound("assets/sound/silly-ghost-sound-242342.mp3");  // 播放敌人生成音效
         for (int i = 0; i < num_; ++i) {
             // 这里添加生成敌人的逻辑
             auto pos = game_.randomVec2(game_.getCurrentScene()->getCameraPosition(), game_.getCurrentScene()->getCameraPosition() + game_.getScreenSize());

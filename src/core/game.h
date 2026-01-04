@@ -73,6 +73,16 @@ public:
     int getHighScore() const { return high_score_; }
     void addScore(int score);
 
+    //音频函数
+    void playMusic(const std::string& music_path, bool loop = true) { Mix_PlayMusic(asset_store_->getMusic(music_path), loop ? -1 : 0); } //-1代表无限循环
+    void playSound(const std::string& sound_path) { Mix_PlayChannel(-1, asset_store_->getSound(sound_path), 0); }
+    void stopMusic() { Mix_HaltMusic(); }
+    void stopSound() { Mix_HaltChannel(-1); }       // 停止所有音效
+    void pauseMusic() { Mix_PauseMusic(); }
+    void pauseSound() { Mix_Pause(-1); }
+    void resumeMusic() { Mix_ResumeMusic(); }
+    void resumeSound() { Mix_Resume(-1); }
+
     // 工具函数
     void drawGrid(const glm::vec2& top_left, const glm::vec2& bottom_right, float grid_width, SDL_FColor fcolor); // 绘制网格
     void drawBoundary(const glm::vec2& top_left, const glm::vec2& bottom_right, float boundary_width, SDL_FColor fcolor); // 绘制边界

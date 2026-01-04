@@ -12,6 +12,7 @@ void SceneMain::init()
     
     Scene::init();
     SDL_HideCursor(); // 隐藏系统默认光标
+    game_.playMusic("assets/bgm/OhMyGhost.ogg");
     world_size_ = glm::vec2(1600.0f, 1200.0f);
     camera_position_ = world_size_ / 2.0f - game_.getScreenSize() / 2.0f;
     
@@ -31,6 +32,7 @@ void SceneMain::init()
     auto pos = game_.randomVec2(game_.getCurrentScene()->getCameraPosition(), game_.getCurrentScene()->getCameraPosition() + game_.getScreenSize());
     Enemy* enemy = Enemy::addEnemyChild(nullptr, pos, player_);
     Effect::addEffectChild(game_.getCurrentScene(), "assets/effect/184_3.png", pos, 1.0f, enemy);
+    game_.playSound("assets/sound/silly-ghost-sound-242342.mp3");  // 播放敌人生成音效
 
     // 创建并初始化鼠标UI对象
     ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);
