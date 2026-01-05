@@ -21,6 +21,7 @@ private:
     void renderBackground();
     void updateColor();
     void checkButtonQuit();  // 检查退出按钮是否被触发
+    void checkButtonStart();
 };
 
 

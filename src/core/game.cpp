@@ -61,6 +61,11 @@ void Game::run()
     while (is_running_)
     {   
         auto start = SDL_GetTicksNS();
+        // 检查是否需要切换场景（安全点）
+        if (next_scene_){
+            changeScene(next_scene_);
+            next_scene_ = nullptr;   // 重置下一场景指针
+        }
         handleEvents();
         update(dt_);
         render();
@@ -168,6 +173,16 @@ void Game::setScore(int score)
 void Game::addScore(int score)
 {
     setScore(score_ + score);
+}
+
+void Game::changeScene(Scene *scene)
+{
+    if (current_scene_){
+        current_scene_->clean();     // 清理当前场景
+        delete current_scene_;       // 释放内存
+    }
+    current_scene_ = scene;          // 设置新场景
+    current_scene_->init();          // 初始化新场景
 }
 
 void Game::drawGrid(const glm::vec2 &top_left, const glm::vec2 &bottom_right, float grid_width, SDL_FColor fcolor)

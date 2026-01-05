@@ -1,5 +1,6 @@
 #include "scene_title.h"
 #include "screen/hud_text.h"
+#include "scene_main.h"
 #include <cmath>
 
 void SceneTitle::init()
@@ -9,6 +10,13 @@ void SceneTitle::init()
     HUDText::addHUDTextChild(this, "幽 灵 逃 生", game_.getScreenSize() / 2.0f - glm::vec2(0, 100), size, "assets/font/VonwaonBitmap-16px.ttf", 64);
     auto score_text = "最高分: " + std::to_string(game_.getHighScore());
     HUDText::addHUDTextChild(this, score_text, game_.getScreenSize() / 2.0f + glm::vec2(0, 100), glm::vec2(200, 50), "assets/font/VonwaonBitmap-16px.ttf", 32);
+    // 创建开始按钮
+    button_start_ = HUDButton::addHUDButtonChild(this, 
+        game_.getScreenSize() / 2.0f + glm::vec2(-200, 200), 
+        "assets/UI/A_Start1.png",   // 正常状态
+        "assets/UI/A_Start2.png",   // 悬停状态
+        "assets/UI/A_Start3.png",   // 按下状态
+        2.0f);                     // 缩放倍数
     // 创建退出按钮
     button_quit_ = HUDButton::addHUDButtonChild(this, 
         game_.getScreenSize() / 2.0f + glm::vec2(200, 200), 
@@ -28,6 +36,7 @@ void SceneTitle::update(float dt)
     Scene::update(dt);
     color_timer_ += dt;
     updateColor();
+    checkButtonStart(); // 检查开始按钮
     checkButtonQuit();  // 检查退出按钮
 }
 
@@ -57,5 +66,12 @@ void SceneTitle::checkButtonQuit()
 {
     if (button_quit_->getIsTrigger()){
         game_.quit();  // 如果退出按钮被触发，退出游戏
+    }
+}
+
+void SceneTitle::checkButtonStart()
+{
+    if (button_start_->getIsTrigger()){
+        game_.safeChangeScene(new SceneMain());  // 切换到主游戏场景
     }
 }

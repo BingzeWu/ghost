@@ -15,9 +15,13 @@ class Scene; // 前向声明
 class Game 
 {
 private:
-    glm::vec2 screen_size_ = glm::vec2(0);
-    bool is_running_ = true;
+    // 游戏状态
+    bool is_running_ = true; // 游戏是否运行
+    Scene* current_scene_ = nullptr; // 当前场景
+    Scene* next_scene_ = nullptr;    // 下一个场景（待切换）
 
+    // 窗口和渲染器
+    glm::vec2 screen_size_ = glm::vec2(0);
     SDL_Window* window_ = nullptr;
     SDL_Renderer* renderer_ = nullptr;
 
@@ -53,8 +57,6 @@ public:
         return instance;
     }
     
-    Scene* current_scene_ = nullptr;
-    
     void init(std::string title, int width, int height);
     void run();
     void handleEvents();
@@ -73,6 +75,10 @@ public:
     void setHighScore(int high_score) { high_score_ = high_score; }
     int getHighScore() const { return high_score_; }
     void addScore(int score);
+
+    // 场景管理函数
+    void safeChangeScene(Scene* scene) { next_scene_ = scene; }  // 安全切换（标记阶段）
+    void changeScene(Scene* scene);                              // 直接切换（执行阶段）
 
     //音频函数
     void playMusic(const std::string& music_path, bool loop = true) { Mix_PlayMusic(asset_store_->getMusic(music_path), loop ? -1 : 0); } //-1代表无限循环
