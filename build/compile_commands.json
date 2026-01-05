@@ -1,0 +1,170 @@
+[
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\main.cpp.obj -c D:\\Demo\\ghost\\src\\main.cpp",
+  "file": "D:/Demo/ghost/src/main.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\scene_main.cpp.obj -c D:\\Demo\\ghost\\src\\scene_main.cpp",
+  "file": "D:/Demo/ghost/src/scene_main.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/scene_main.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\scene_title.cpp.obj -c D:\\Demo\\ghost\\src\\scene_title.cpp",
+  "file": "D:/Demo/ghost/src/scene_title.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/scene_title.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\player.cpp.obj -c D:\\Demo\\ghost\\src\\player.cpp",
+  "file": "D:/Demo/ghost/src/player.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/player.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\enemy.cpp.obj -c D:\\Demo\\ghost\\src\\enemy.cpp",
+  "file": "D:/Demo/ghost/src/enemy.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/enemy.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\spawner.cpp.obj -c D:\\Demo\\ghost\\src\\spawner.cpp",
+  "file": "D:/Demo/ghost/src/spawner.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/spawner.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\weapon_thunder.cpp.obj -c D:\\Demo\\ghost\\src\\weapon_thunder.cpp",
+  "file": "D:/Demo/ghost/src/weapon_thunder.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/weapon_thunder.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\actor.cpp.obj -c D:\\Demo\\ghost\\src\\core\\actor.cpp",
+  "file": "D:/Demo/ghost/src/core/actor.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/actor.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\game.cpp.obj -c D:\\Demo\\ghost\\src\\core\\game.cpp",
+  "file": "D:/Demo/ghost/src/core/game.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/game.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\object.cpp.obj -c D:\\Demo\\ghost\\src\\core\\object.cpp",
+  "file": "D:/Demo/ghost/src/core/object.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/object.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\object_world.cpp.obj -c D:\\Demo\\ghost\\src\\core\\object_world.cpp",
+  "file": "D:/Demo/ghost/src/core/object_world.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/object_world.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\scene.cpp.obj -c D:\\Demo\\ghost\\src\\core\\scene.cpp",
+  "file": "D:/Demo/ghost/src/core/scene.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/scene.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\asset_store.cpp.obj -c D:\\Demo\\ghost\\src\\core\\asset_store.cpp",
+  "file": "D:/Demo/ghost/src/core/asset_store.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/asset_store.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\core\\object_affiliate.cpp.obj -c D:\\Demo\\ghost\\src\\core\\object_affiliate.cpp",
+  "file": "D:/Demo/ghost/src/core/object_affiliate.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/core/object_affiliate.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\affiliate\\sprite.cpp.obj -c D:\\Demo\\ghost\\src\\affiliate\\sprite.cpp",
+  "file": "D:/Demo/ghost/src/affiliate/sprite.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/affiliate/sprite.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\affiliate\\sprite_anim.cpp.obj -c D:\\Demo\\ghost\\src\\affiliate\\sprite_anim.cpp",
+  "file": "D:/Demo/ghost/src/affiliate/sprite_anim.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/affiliate/sprite_anim.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\affiliate\\collider.cpp.obj -c D:\\Demo\\ghost\\src\\affiliate\\collider.cpp",
+  "file": "D:/Demo/ghost/src/affiliate/collider.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/affiliate/collider.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\affiliate\\affiliate_bar.cpp.obj -c D:\\Demo\\ghost\\src\\affiliate\\affiliate_bar.cpp",
+  "file": "D:/Demo/ghost/src/affiliate/affiliate_bar.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/affiliate/affiliate_bar.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\affiliate\\text_label.cpp.obj -c D:\\Demo\\ghost\\src\\affiliate\\text_label.cpp",
+  "file": "D:/Demo/ghost/src/affiliate/text_label.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/affiliate/text_label.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\raw\\stats.cpp.obj -c D:\\Demo\\ghost\\src\\raw\\stats.cpp",
+  "file": "D:/Demo/ghost/src/raw/stats.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/raw/stats.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\raw\\weapon.cpp.obj -c D:\\Demo\\ghost\\src\\raw\\weapon.cpp",
+  "file": "D:/Demo/ghost/src/raw/weapon.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/raw/weapon.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\world\\effect.cpp.obj -c D:\\Demo\\ghost\\src\\world\\effect.cpp",
+  "file": "D:/Demo/ghost/src/world/effect.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/world/effect.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\world\\spell.cpp.obj -c D:\\Demo\\ghost\\src\\world\\spell.cpp",
+  "file": "D:/Demo/ghost/src/world/spell.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/world/spell.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\screen\\ui_mouse.cpp.obj -c D:\\Demo\\ghost\\src\\screen\\ui_mouse.cpp",
+  "file": "D:/Demo/ghost/src/screen/ui_mouse.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/screen/ui_mouse.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\screen\\hud_stats.cpp.obj -c D:\\Demo\\ghost\\src\\screen\\hud_stats.cpp",
+  "file": "D:/Demo/ghost/src/screen/hud_stats.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/screen/hud_stats.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\screen\\hud_skill.cpp.obj -c D:\\Demo\\ghost\\src\\screen\\hud_skill.cpp",
+  "file": "D:/Demo/ghost/src/screen/hud_skill.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/screen/hud_skill.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\screen\\hud_text.cpp.obj -c D:\\Demo\\ghost\\src\\screen\\hud_text.cpp",
+  "file": "D:/Demo/ghost/src/screen/hud_text.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/screen/hud_text.cpp.obj"
+},
+{
+  "directory": "D:/Demo/ghost/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/GhostEscape-Windows.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -Wpedantic -o CMakeFiles\\GhostEscape-Windows.dir\\src\\screen\\hud_button.cpp.obj -c D:\\Demo\\ghost\\src\\screen\\hud_button.cpp",
+  "file": "D:/Demo/ghost/src/screen/hud_button.cpp",
+  "output": "CMakeFiles/GhostEscape-Windows.dir/src/screen/hud_button.cpp.obj"
+}
+]

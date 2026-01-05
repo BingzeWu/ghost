@@ -1,7 +1,7 @@
 #pragma once
 
 // 启用调试模式
-#define DEBUG_MODE 
+//#define DEBUG_MODE 
 
 enum class ObjectType
 {

@@ -14,7 +14,7 @@ void Player::init()
 
     collider_ = Collider::addColliderChild(this, sprite_idle_->getSize()/ 1.5f); // 添加碰撞体，作为组件在玩家对象中管理
     stats_ = Stats::addStatsChild(this);
-    effect_ = Effect::addEffectChild(game_->getCurrentScene(), "assets/effect/1764.png", glm::vec2(0), 2.0f); // 预加载死亡特效,但不激活
+    effect_ = Effect::addEffectChild(game_.getCurrentScene(), "assets/effect/1764.png", glm::vec2(0), 2.0f); // 预加载死亡特效,但不激活
     effect_->setActive(false);
     weapon_thunder_ = WeaponThunder::addWeaponThunderChild(this, 2.0f, 40.0f);
 }

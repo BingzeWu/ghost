@@ -6,9 +6,12 @@ project(GhostEscape VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# 设置目标名称
+set(TARGET ${PROJECT_NAME}-${CMAKE_SYSTEM_NAME})
+
 # 设置编译选项
 if (MSVC)
-    add_compile_options(/W4 /utf-8)
+    add_compile_options(/W4 /utf-8) 
 else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -16,9 +19,6 @@ endif()
 # 设置编译输出目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR})
-
-set(TARGET ${PROJECT_NAME}-${CMAKE_SYSTEM_NAME})
-
 
 # 查找并载入Cmake预设
 find_package(SDL3 REQUIRED)
@@ -68,3 +68,8 @@ target_link_libraries(${TARGET}
                         SDL3_ttf::SDL3_ttf 
                         SDL3_mixer::SDL3_mixer 
                         glm::glm)   
+
+#
+if(MSVC)
+    target_link_options(${TARGET} PRIVATE "/SUBSYSTEM:WINDOWS")
+endif()
