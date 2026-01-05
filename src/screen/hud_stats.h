@@ -31,7 +31,6 @@ public:
     Sprite* getManaBar() const { return mana_bar_; }
     Sprite* getManaBarBg() const { return mana_bar_bg_; }
     Sprite* getManaIcon() const { return mana_icon_; }
-
     float getHealthPercentage() const { return health_percentage_; }
     float getManaPercentage() const { return mana_percentage_; }
     void setHealthPercentage(float percentage) { health_percentage_ = percentage; }

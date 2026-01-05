@@ -6,6 +6,7 @@
 void SceneTitle::init()
 {
     Scene::init();
+    SDL_ShowCursor();
     auto size = glm::vec2(game_.getScreenSize().x/2.0f, game_.getScreenSize().y/3.0f);
     HUDText::addHUDTextChild(this, "幽 灵 逃 生", game_.getScreenSize() / 2.0f - glm::vec2(0, 100), size, "assets/font/VonwaonBitmap-16px.ttf", 64);
     auto score_text = "最高分: " + std::to_string(game_.getHighScore());
@@ -17,26 +18,51 @@ void SceneTitle::init()
         "assets/UI/A_Start2.png",   // 悬停状态
         "assets/UI/A_Start3.png",   // 按下状态
         2.0f);                     // 缩放倍数
+    // 创建致谢按钮
+    button_credits_ = HUDButton::addHUDButtonChild(this, 
+        game_.getScreenSize() / 2.0f + glm::vec2(0, 200), 
+        "assets/UI/A_Credits1.png", 
+        "assets/UI/A_Credits2.png", 
+        "assets/UI/A_Credits3.png", 
+        2.0f);
     // 创建退出按钮
     button_quit_ = HUDButton::addHUDButtonChild(this, 
         game_.getScreenSize() / 2.0f + glm::vec2(200, 200), 
         "assets/UI/A_Quit1.png",   // 正常状态
         "assets/UI/A_Quit2.png",   // 悬停状态
         "assets/UI/A_Quit3.png",   // 按下状态
-        2.0f);         
+        2.0f);
+    // 加载并创建Credits文本
+    auto text = game_.loadTextFile("assets/credits.txt");
+    credits_text_ = HUDText::addHUDTextChild(this, text, 
+        game_.getScreenSize() / 2.0f, glm::vec2(500, 500), 
+        "assets/font/VonwaonBitmap-16px.ttf", 16);
+    credits_text_->setBgSizeByText();  // 根据文本内容设置背景大小
+    credits_text_->setActive(false);   // 初始时不显示
 }
 
-void SceneTitle::handleEvents(SDL_Event &event)
+bool SceneTitle::handleEvents(SDL_Event &event)
 {
-    Scene::handleEvents(event);
+    if (credits_text_->getActive()) {
+        if (event.type == SDL_EVENT_MOUSE_BUTTON_UP) { 
+            credits_text_->setActive(false);  // 点击任意位置关闭Credits
+            return true;
+        }
+    }
+    if (Scene::handleEvents(event)) return true;  // 场景处理了事件
+    return false;  // 事件未被处理
 }
 
 void SceneTitle::update(float dt)
-{
-    Scene::update(dt);
+{    
     color_timer_ += dt;
     updateColor();
+    if (credits_text_->getActive()) {
+        return;  // Credits显示时不更新其他内容
+    }
+    Scene::update(dt);
     checkButtonStart(); // 检查开始按钮
+    checkButtonCredits(); // 检查致谢按钮
     checkButtonQuit();  // 检查退出按钮
 }
 
@@ -73,5 +99,12 @@ void SceneTitle::checkButtonStart()
 {
     if (button_start_->getIsTrigger()){
         game_.safeChangeScene(new SceneMain());  // 切换到主游戏场景
+    }
+}
+
+void SceneTitle::checkButtonCredits()
+{
+    if (button_credits_->getIsTrigger()){
+        credits_text_->setActive(!credits_text_->getActive());  // 切换Credits文本的显示状态
     }
 }

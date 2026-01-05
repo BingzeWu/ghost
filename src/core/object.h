@@ -19,7 +19,7 @@ public:
 
     virtual void init() {}
     virtual void update(float dt);
-    virtual void handleEvents(SDL_Event& event);
+    virtual bool handleEvents(SDL_Event& event);
     virtual void render();
     virtual void clean();
 

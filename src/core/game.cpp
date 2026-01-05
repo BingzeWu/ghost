@@ -2,6 +2,7 @@
 #include "../scene_main.h"
 #include "../scene_title.h"
 #include "../affiliate/sprite.h"
+#include <fstream>
 
 void Game::init(std::string title, int width, int height)
 {
@@ -160,6 +161,17 @@ TTF_Text *Game::createTTF_Text(const std::string &text, const std::string &font_
 {
     auto font = asset_store_->getFont(font_path, font_size);
     return TTF_CreateText(ttf_engine_, font, text.c_str(), 0);
+}
+
+std::string Game::loadTextFile(const std::string &file_path)
+{
+    std::ifstream file(file_path);
+    std::string line;
+    std::string text;
+    while (std::getline(file, line)){
+        text += line + "\n";
+    }
+    return text;
 }
 
 void Game::setScore(int score)

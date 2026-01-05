@@ -24,7 +24,7 @@ public:
     );
     
     // 事件处理和更新方法
-    virtual void handleEvents(SDL_Event& event) override;
+    virtual bool handleEvents(SDL_Event& event) override;
     virtual void update(float dt) override;
     
     // 检查状态的方法

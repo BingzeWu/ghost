@@ -1,40 +1,49 @@
 #include "scene.h"
 
-void Scene::handleEvents(SDL_Event &event)
+bool Scene::handleEvents(SDL_Event &event)
 {
-    Object::handleEvents(event);
+    // 先处理屏幕元素的事件
     for (auto &child : children_screen_)
     {   if (child->getActive())
         {
-            child->handleEvents(event);
+            if (child->handleEvents(event)) return true;
         }
     }
-    
+    // 如果场景暂停，则不处理世界元素的事件
+    if (is_pause_) return false;
+    // 处理场景自身的事件
+    Object::handleEvents(event);
+    // 处理世界元素的事件
     for (auto &child : children_world_)
     {   if (child->getActive())
         {
-            child->handleEvents(event);
+            if (child->handleEvents(event)) return true;
         }
     }
+    return false;
 }
 
 void Scene::update(float dt)
-{
-    Object::update(dt);
-    for (auto it = children_world_.begin(); it != children_world_.end();){
-        auto child = *it;
-        if (child->getNeedRemove()){
-            it = children_world_.erase(it);
-            child->clean();
-            delete child; // 释放内存,防止内存泄漏！
-            child = nullptr;  // 避免悬空指针
-        } else {
-            if(child->getActive()) {
-                child->update(dt);
+{   
+    if (!is_pause_) {
+        // 如果不处于暂停状态则更新场景对象
+        Object::update(dt);
+        for (auto it = children_world_.begin(); it != children_world_.end();){
+            auto child = *it;
+            if (child->getNeedRemove()){
+                it = children_world_.erase(it);
+                child->clean();
+                delete child; // 释放内存,防止内存泄漏！
+                child = nullptr;  // 避免悬空指针
+            } else {
+                if(child->getActive()) {
+                    child->update(dt);
+                }
+                ++it;
             }
-            ++it;
         }
     }
+    // 更新屏幕对象
     for (auto it = children_screen_.begin(); it != children_screen_.end(); )
     {   auto &child = *it;
         if (child->getNeedRemove()){
@@ -84,6 +93,19 @@ void Scene::clean()
     children_screen_.clear();
 }
 
+void Scene::pause()
+{
+    is_pause_ = true;
+    game_.pauseSound();  // 暂停音效
+    game_.pauseMusic();  // 暂停音乐
+}
+
+void Scene::resume()
+{
+    is_pause_ = false;
+    game_.resumeSound();  // 恢复音效
+    game_.resumeMusic();  // 恢复音乐
+}
 
 void Scene::setCameraPosition(const glm::vec2 &camera_position)
 {

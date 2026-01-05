@@ -12,6 +12,7 @@ class Effect : public ObjectWorld
 public:
     static Effect* addEffectChild(Object* parent, const std::string& file_path,glm::vec2 pos, float scale = 1.0f, ObjectWorld* next_object = nullptr);
     virtual void update(float dt) override;
+    virtual void clean() override;
 
     // setters and getters
     void setSpriteAnim(SpriteAnim* sprite) { sprite_ = sprite; }

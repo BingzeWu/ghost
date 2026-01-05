@@ -68,6 +68,7 @@ public:
 
     //文字相关函数
     TTF_Text* createTTF_Text(const std::string& text, const std::string& font_path, int font_size = 16);
+    std::string loadTextFile(const std::string& file_path);
     
     // 得分函数
     void setScore(int score);

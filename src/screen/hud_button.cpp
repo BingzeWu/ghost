@@ -19,13 +19,14 @@ HUDButton *HUDButton::addHUDButtonChild(Object *parent, glm::vec2 render_pos, co
     return hud_button;
 }
 
-void HUDButton::handleEvents(SDL_Event &event)
+bool HUDButton::handleEvents(SDL_Event &event)
 {
     if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (is_hover_){  // 只有当鼠标悬停在按钮上时，才会响应按下事件
                 is_press_ = true;
                 game_.playSound("assets/sound/UI_button08.wav");  // 播放按下音效
+                return true;
             }
         }
     } else if (event.type == SDL_EVENT_MOUSE_BUTTON_UP) {
@@ -33,9 +34,11 @@ void HUDButton::handleEvents(SDL_Event &event)
             is_press_ = false;
             if (is_hover_){  // 只有当鼠标悬停在按钮上放开时，才视为触发按钮
                 is_trigger_ = true;
+                return true;
             }
         }
     }
+    return false;
 }
 
 void HUDButton::update(float dt)
@@ -89,6 +92,9 @@ bool HUDButton::getIsTrigger()
 {
     if (is_trigger_){
         is_trigger_ = false;  // 读取后自动重置
+        is_press_ = false;  // 点击后重置按下状态
+        is_hover_ = false;  // 点击后重置悬停状态
+        is_trigger_ = false;
         return true;
     }
     return false;

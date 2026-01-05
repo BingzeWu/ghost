@@ -14,13 +14,15 @@ void Player::init()
 
     collider_ = Collider::addColliderChild(this, sprite_idle_->getSize()/ 1.5f); // 添加碰撞体，作为组件在玩家对象中管理
     stats_ = Stats::addStatsChild(this);
-    effect_ = Effect::addEffectChild(nullptr, "assets/effect/1764.png", glm::vec2(0), 2.0f);
+    effect_ = Effect::addEffectChild(game_->getCurrentScene(), "assets/effect/1764.png", glm::vec2(0), 2.0f); // 预加载死亡特效,但不激活
+    effect_->setActive(false);
     weapon_thunder_ = WeaponThunder::addWeaponThunderChild(this, 2.0f, 40.0f);
 }
 
-void Player::handleEvents(SDL_Event& event)
+bool Player::handleEvents(SDL_Event& event)
 {
-    Actor::handleEvents(event);
+    if (Actor::handleEvents(event)) return true;
+    return false;
 }
 
 void Player::update(float dt)
@@ -108,7 +110,7 @@ void Player::changeState(bool is_moving)
 void Player::checkIsDead()
 {
     if (!stats_->getIsAlive()){
-        game_.getCurrentScene()->safeAddChild(effect_);
+        effect_->setActive(true);// 激活死亡特效
         effect_->setPosition(getPosition());
         setActive(false);
         game_.playSound("assets/sound/female-scream-02-89290.mp3");  // 播放死亡音效

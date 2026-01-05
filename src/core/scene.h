@@ -16,16 +16,20 @@ protected:
     // 场景对象容器
     std::vector<ObjectWorld*> children_world_;
     std::vector<ObjectScreen*> children_screen_;
+    bool is_pause_ = false;  // 暂停状态标志
 
 
 public:
     Scene() = default; 
     ~Scene() override = default;
 
-    virtual void handleEvents(SDL_Event& event) override;
+    virtual bool handleEvents(SDL_Event& event) override;
     virtual void update(float dt) override;
     virtual void render();
     virtual void clean() override;
+
+    void pause();   // 暂停场景
+    void resume();  // 恢复场景
 
     // 坐标转换
     glm::vec2 worldToScreen(const glm::vec2 &world_position)

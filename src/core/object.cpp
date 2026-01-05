@@ -1,11 +1,12 @@
 #include "object.h"
 
-void Object::handleEvents(SDL_Event& event) {
+bool Object::handleEvents(SDL_Event& event) {
     for (auto& child : children_) {
         if(child->getActive()) {
-            child->handleEvents(event);
+            if (child->handleEvents(event)) return true;
         }
     }
+    return false;
 }
 
 void Object::update(float dt) {

@@ -1,10 +1,12 @@
 #include "scene_main.h"
+#include "scene_title.h"
 #include "player.h"
 #include "enemy.h"
 #include "spawner.h"
 #include "world/spell.h"
 #include "screen/hud_stats.h"
 #include "screen/hud_text.h"
+#include "screen/hud_button.h"
 
 void SceneMain::init()
 {
@@ -38,14 +40,26 @@ void SceneMain::init()
     ui_mouse_ = UIMouse::addUIMouseChild(this, "assets/UI/29.png", "assets/UI/30.png", 1.0f, Anchor::CENTER);
     hud_stats_ = HUDStats::addHUDStatsChild(this, player_, glm::vec2(30.f));
     hud_text_score_ = HUDText::addHUDTextChild(this, "Score: 0", glm::vec2(game_.getScreenSize().x - 120.f, 30.f), glm::vec2(200, 50));
-    //
+    
+    // 添加控制按钮
+    button_pause_ = HUDButton::addHUDButtonChild(this, 
+        game_.getScreenSize() - glm::vec2(230.f, 30.f),
+        "assets/UI/A_Pause1.png", "assets/UI/A_Pause2.png", "assets/UI/A_Pause3.png");
+    button_restart_ = HUDButton::addHUDButtonChild(this, 
+        game_.getScreenSize() - glm::vec2(140.f, 30.f), 
+        "assets/UI/A_Restart1.png", "assets/UI/A_Restart2.png", "assets/UI/A_Restart3.png");
+    button_back_ = HUDButton::addHUDButtonChild(this, 
+        game_.getScreenSize() - glm::vec2(50.f, 30.f), 
+        "assets/UI/A_Back1.png", "assets/UI/A_Back2.png", "assets/UI/A_Back3.png");
+
     SDL_Log("SceneMain initialized.");
 
 }
 
-void SceneMain::handleEvents(SDL_Event& event)
+bool SceneMain::handleEvents(SDL_Event& event)
 {
-    Scene::handleEvents(event);
+    if (Scene::handleEvents(event)) return true;  // 场景处理了事件
+    return false;  // 事件未被处理
 }
 
 void SceneMain::renderBackground()
@@ -79,10 +93,34 @@ void SceneMain::updateScore()
     }
 }
 
+void SceneMain::checkButtonPause()
+{
+    if (!button_pause_->getIsTrigger()) return;
+    if (is_pause_) resume();  // 如果当前是暂停状态，则恢复
+    else pause();            // 否则暂停
+}
+
+void SceneMain::checkButtonRestart()
+{
+    if (!button_restart_->getIsTrigger()) return;
+    auto scene = new SceneMain();
+    game_.safeChangeScene(scene);  // 使用安全切换方法创建新场景
+}
+
+void SceneMain::checkButtonBack()
+{
+    if (!button_back_->getIsTrigger()) return;
+    auto scene = new SceneTitle();
+    game_.safeChangeScene(scene);  // 切换回标题场景
+}
+
 void SceneMain::update(float dt)
 {   
     Scene::update(dt);  // 调用父类的update，它会自动处理所有子对象
     updateScore();
+    checkButtonPause();
+    checkButtonRestart();
+    checkButtonBack();
 }
 
 
